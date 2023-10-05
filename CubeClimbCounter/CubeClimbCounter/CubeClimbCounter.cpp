@@ -1,8 +1,10 @@
 ﻿#include <iostream>
 #include "CubeClimbFunction.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int stepsResult = cubeStepsCounter(8, 9);
+    cout << stepsResult << endl;
 }
 
