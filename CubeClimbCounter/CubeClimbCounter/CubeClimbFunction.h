@@ -9,7 +9,12 @@ int cubeStepsCounter(int N, int pastStep)
 
     for (int i = 1; i < pastStep; i++)
     {
-        stepsResult += cubeStepsCounter(N - i, i);
+        int leftCubesStep = N - i;
+
+        if (leftCubesStep < 0)
+            break; 
+
+        stepsResult += cubeStepsCounter(leftCubesStep, i);
     }
 
     return stepsResult;

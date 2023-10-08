@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int stepsResult = cubeStepsCounter(8, 9);
+    int stepsResult = cubeStepsCounter(100, 101);
     cout << stepsResult << endl;
 }
 
