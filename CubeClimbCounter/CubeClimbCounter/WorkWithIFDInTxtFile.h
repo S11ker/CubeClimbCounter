@@ -18,7 +18,7 @@ using namespace std;
  */
 variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 	// Проверяем, имеет ли файл расширение .txt
-	if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
+	if (fileName.size() < 4 || fileName.substr(fileName.size() - 4) != ".txt") {
 		throw runtime_error("Invalid file format");
 	}
 
