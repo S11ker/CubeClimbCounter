@@ -68,5 +68,18 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 
 
 void printIFDToTxt(const string& fileName, double number) {
+    
+    if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
+        throw runtime_error("Invalid file format");
+    }
 
+    ofstream outputFile(fileName);
+
+    if (!outputFile.is_open()) {
+        throw std::runtime_error("Could not open the file");
+    }
+
+    outputFile << number;
+
+    outputFile.close();
 }
