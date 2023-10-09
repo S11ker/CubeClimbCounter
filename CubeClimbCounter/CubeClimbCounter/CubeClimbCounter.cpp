@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "CubeClimbFunction.h"
-using namespace std;
+#include "WorkWithIFDInTxtFile.h"
 
 int main()
 {
