@@ -67,6 +67,6 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 }
 
 
-void printNumberToFile(const string& fileName, double number) {
+void printIFDToTxt(const string& fileName, double number) {
 
 }
