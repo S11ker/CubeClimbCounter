@@ -24,6 +24,11 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
     string line;
     if (getline(file, line)) {
 
+        for (char& c : line) {
+            if (c == ',') {
+                c = '.';
+            }
+        }
         regex intRegex("\\d+");
         regex floatRegex("\\d+\\.\\d");
         regex doubleRegex("\\d+\\.\\d+");
