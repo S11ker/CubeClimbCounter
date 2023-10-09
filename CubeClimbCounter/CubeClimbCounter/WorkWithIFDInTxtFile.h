@@ -65,3 +65,8 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
         throw runtime_error("File is empty");
     }
 }
+
+
+void printNumberToFile(const string& fileName, double number) {
+
+}
