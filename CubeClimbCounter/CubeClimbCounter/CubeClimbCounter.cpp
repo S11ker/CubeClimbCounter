@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include "windows.h"
 #include "CubeClimbFunction.h"
 #include "WorkWithIFDInTxtFile.h"
 
