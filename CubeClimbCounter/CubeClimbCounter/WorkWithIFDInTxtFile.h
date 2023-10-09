@@ -79,7 +79,7 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 void printIFDToTxt(const string& fileName, double number) {
 
 	// Проверка формата файла
-	if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
+	if (fileName.size() < 4 || fileName.substr(fileName.size() - 4) != ".txt") {
 		throw runtime_error("Invalid file format");
 	}
 
