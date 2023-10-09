@@ -17,69 +17,82 @@ using namespace std;
  * @throws runtime_error в случае ошибки, такой как неверный формат файла, невозможность определить тип числа или ошибка при открытии файла.
  */
 variant<int, float, double> extractIFDFromTxt(const string& fileName) {
-    // Проверяем, имеет ли файл расширение .txt
-    if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
-        throw runtime_error("Invalid file format");
-    }
+	// Проверяем, имеет ли файл расширение .txt
+	if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
+		throw runtime_error("Invalid file format");
+	}
 
-    // Устанавливаем глобальную локаль для корректной обработки десятичных разделителей
-    locale::global(locale("en_US.UTF-8"));
+	// Устанавливаем глобальную локаль для корректной обработки десятичных разделителей
+	locale::global(locale("en_US.UTF-8"));
 
-    // Открываем файл для чтения
-    ifstream file(fileName);
+	// Открываем файл для чтения
+	ifstream file(fileName);
 
-    // Проверяем, успешно ли открыт файл
-    if (!file.is_open()) {
-        throw runtime_error("Could not open the file");
-    }
+	// Проверяем, успешно ли открыт файл
+	if (!file.is_open()) {
+		throw runtime_error("Could not open the file");
+	}
 
-    // Считываем первую строку из файла
-    string line;
-    if (getline(file, line)) {
-        // Заменяем запятые на точки, если они используются как разделители десятичных знаков
-        for (char& c : line) {
-            if (c == ',') {
-                c = '.';
-            }
-        }
+	// Считываем первую строку из файла
+	string line;
+	if (getline(file, line)) {
+		// Заменяем запятые на точки, если они используются как разделители десятичных знаков
+		for (char& c : line) {
+			if (c == ',') {
+				c = '.';
+			}
+		}
 
-        // Проверяем строку на соответствие регулярным выражениям для int, float и double
-        regex intRegex("\\d+");
-        regex floatRegex("\\d+\\.\\d");
-        regex doubleRegex("\\d+\\.\\d+");
+		// Проверяем строку на соответствие регулярным выражениям для int, float и double
+		regex intRegex("\\d+");
+		regex floatRegex("\\d+\\.\\d");
+		regex doubleRegex("\\d+\\.\\d+");
 
-        if (regex_match(line, intRegex)) {
-            return stoi(line);  // Преобразуем строку в int
-        }
-        else if (regex_match(line, floatRegex)) {
-            return stof(line);  // Преобразуем строку в float
-        }
-        else if (regex_match(line, doubleRegex)) {
-            return stod(line);  // Преобразуем строку в double
-        }
-        else {
-            throw runtime_error("It is impossible to determine the type of number in a string");
-        }
-    }
-    else {
-        throw runtime_error("File is empty");
-    }
+		if (regex_match(line, intRegex)) {
+			return stoi(line);  // Преобразуем строку в int
+		}
+		else if (regex_match(line, floatRegex)) {
+			return stof(line);  // Преобразуем строку в float
+		}
+		else if (regex_match(line, doubleRegex)) {
+			return stod(line);  // Преобразуем строку в double
+		}
+		else {
+			throw runtime_error("It is impossible to determine the type of number in a string");
+		}
+	}
+	else {
+		throw runtime_error("File is empty");
+	}
 }
 
 
+/**
+ * @brief Записывает число (int, float или double) в текстовый файл.
+ *
+ * Эта функция открывает текстовый файл с заданным именем и записывает
+ * в начало первой строки текстового файла указанное число.
+ *
+ * @param [in] fileName - имя текстового файла для записи
+ * @param [in] number - число, которое нужно записать в файл
+ */
 void printIFDToTxt(const string& fileName, double number) {
-    
-    if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
-        throw runtime_error("Invalid file format");
-    }
 
-    ofstream outputFile(fileName);
+	// Проверка формата файла
+	if (fileName.length() < 4 || fileName.find(".txt") == string::npos) {
+		throw runtime_error("Invalid file format");
+	}
 
-    if (!outputFile.is_open()) {
-        throw std::runtime_error("Could not open the file");
-    }
+	// Открытие файла для записи
+	ofstream outputFile(fileName);
 
-    outputFile << number;
+	if (!outputFile.is_open()) {
+		throw runtime_error("Could not open the file");
+	}
 
-    outputFile.close();
+	// Запись числа в файл
+	outputFile << number;
+
+	// Закрытие файла
+	outputFile.close();
 }
