@@ -84,15 +84,15 @@ void printIFDToTxt(const string& fileName, double number) {
 	}
 
 	// Открытие файла для записи
-	ofstream outputFile(fileName);
+	ofstream file(fileName);
 
-	if (!outputFile.is_open()) {
+	if (!file.is_open()) {
 		throw runtime_error("Could not open the file");
 	}
 
 	// Запись числа в файл
-	outputFile << number;
+	file << number;
 
 	// Закрытие файла
-	outputFile.close();
+	file.close();
 }
