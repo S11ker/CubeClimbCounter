@@ -90,8 +90,17 @@ void printIFDToTxt(const string& fileName, double number) {
 		throw runtime_error("Could not open the file");
 	}
 
+	string num = to_string(number);
+
+	// Убрать нули в конце числа при необходимости
+	size_t pos1 = num.find_last_not_of('0');
+	if (pos1 != std::string::npos && num[pos1] == '.') {
+		pos1--;
+	}
+	num = num.substr(0, pos1 + 1);
+
 	// Запись числа в файл
-	file << number;
+	file << num;
 
 	// Закрытие файла
 	file.close();
