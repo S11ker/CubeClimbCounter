@@ -80,14 +80,14 @@ void printIFDToTxt(const string& fileName, double number) {
 
 	// Проверка формата файла
 	if (fileName.size() < 4 || fileName.substr(fileName.size() - 4) != ".txt") {
-		throw runtime_error("Invalid file format");
+		throw runtime_error("Fail: Invalid file format");
 	}
 
 	// Открытие файла для записи
 	ofstream file(fileName);
 
 	if (!file.is_open()) {
-		throw runtime_error("Could not open the file");
+		throw runtime_error("Fail: Could not open the file");
 	}
 
 	string num = to_string(number);
