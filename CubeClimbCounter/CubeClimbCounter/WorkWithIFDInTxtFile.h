@@ -19,7 +19,7 @@ using namespace std;
 variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 	// Проверяем, имеет ли файл расширение .txt
 	if (fileName.size() < 4 || fileName.substr(fileName.size() - 4) != ".txt") {
-		throw runtime_error("Invalid file format");
+		throw runtime_error("Fail: Invalid file format");
 	}
 
 	// Устанавливаем глобальную локаль для корректной обработки десятичных разделителей
@@ -30,7 +30,7 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 
 	// Проверяем, успешно ли открыт файл
 	if (!file.is_open()) {
-		throw runtime_error("Could not open the file");
+		throw runtime_error("Fail: Could not open the file");
 	}
 
 	// Считываем первую строку из файла
@@ -58,11 +58,11 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 			return stod(line);  // Преобразуем строку в double
 		}
 		else {
-			throw runtime_error("It is impossible to determine the type of number in a string");
+			throw runtime_error("Fail: It is impossible to determine the type of number in a string");
 		}
 	}
 	else {
-		throw runtime_error("File is empty");
+		throw runtime_error("Fail: File is empty");
 	}
 }
 
