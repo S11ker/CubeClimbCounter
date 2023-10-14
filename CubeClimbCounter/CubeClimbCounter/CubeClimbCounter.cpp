@@ -85,6 +85,17 @@ int main(const int argc, char** argv)
 
 			if (holds_alternative<int>(result)) {
 				cubeNumber = get<int>(result);
+
+				if (cubeNumber > 100 || cubeNumber < 1)
+				{
+					throw runtime_error("Введены некорректные данные!\nЗначение N нарушает заданный диапазон (1<=N<=100).");
+				}
+				else
+				{
+					// Рассчет количества лестниц и запись результата в выходной файл
+					int stepsResult = cubeStepsCounter(cubeNumber, cubeNumber + 1);
+					printIFDToTxt(outputFileName, stepsResult);
+				}
 			}
 			else
 			{
@@ -97,10 +108,6 @@ int main(const int argc, char** argv)
 			outputFile << error.what();
 			outputFile.close();
 		}
-
-		// Рассчет количества лестниц и запись результата в выходной файл
-		int stepsResult = cubeStepsCounter(cubeNumber, cubeNumber + 1);
-		printIFDToTxt(outputFileName, stepsResult);
 	}
 	catch (const exception& error) {
 		// Вывод ошибки в консоль
