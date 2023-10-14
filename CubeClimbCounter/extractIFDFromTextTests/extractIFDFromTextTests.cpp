@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
+#include "../CubeClimbCounter/WorkWithIFDInTxtFile.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
