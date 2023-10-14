@@ -104,8 +104,19 @@ int main(const int argc, char** argv)
 		}
 		catch (const exception& error)
 		{
-			// Запись ошибки в выходной файл и его закрытие
-			outputFile << error.what();
+			string errorText = error.what();
+			// Проверка на наличие подстроки "Fail:" в сообщении об ошибке
+			if (errorText.find("Fail:") != string::npos)
+			{
+				// Запись ошибки в выходной файл
+				outputFile << "Введены некорректные данные!\nВ строку не допускается ввод любых символов, кроме цифр.";
+			}
+			else
+			{
+				// Запись ошибки в выходной файл
+				outputFile << errorText;
+			}
+			// Закрытие выходного файла
 			outputFile.close();
 		}
 	}
