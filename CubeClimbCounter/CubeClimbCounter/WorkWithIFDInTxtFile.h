@@ -44,9 +44,9 @@ variant<int, float, double> extractIFDFromTxt(const string& fileName) {
 		}
 
 		// Проверяем строку на соответствие регулярным выражениям для int, float и double
-		regex intRegex("\\d+");
-		regex floatRegex("\\d+\\.\\d");
-		regex doubleRegex("\\d+\\.\\d+");
+		regex intRegex("-?\\d+");
+		regex floatRegex("-?\\d+\\.\\d");
+		regex doubleRegex("-?\\d+\\.\\d+");
 
 		if (regex_match(line, intRegex)) {
 			return stoi(line);  // Преобразуем строку в int
