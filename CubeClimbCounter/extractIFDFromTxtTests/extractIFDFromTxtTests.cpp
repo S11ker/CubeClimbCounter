@@ -9,14 +9,14 @@ namespace extractIFDFromTxtTests
 	TEST_CLASS(extractIFDFromTxtTests)
 	{
 	public:
-		
+
 		TEST_METHOD(fileFormatDoesNotMatchToTxt)
 		{
 			int N = NULL;
 
 			string errorText = "NULL";
 			string expErrorText = "Fail: Invalid file format";
-			
+
 			try {
 				auto res = extractIFDFromTxt("input.png");
 
@@ -151,7 +151,7 @@ namespace extractIFDFromTxtTests
 			int expN = 199;
 
 			string errorText = "NULL";
-			
+
 			try {
 				auto res = extractIFDFromTxt("input1.txt");
 
@@ -171,7 +171,7 @@ namespace extractIFDFromTxtTests
 			}
 			Assert::AreEqual(expN, N);
 		}
-		
+
 		TEST_METHOD(positiveBigIntNumber)
 		{
 			int N = NULL;
