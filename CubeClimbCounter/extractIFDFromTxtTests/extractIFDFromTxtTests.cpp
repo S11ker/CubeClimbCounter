@@ -9,14 +9,14 @@ namespace extractIFDFromTxtTests
 	TEST_CLASS(extractIFDFromTxtTests)
 	{
 	public:
-		
+
 		TEST_METHOD(fileFormatDoesNotMatchToTxt)
 		{
 			int N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: Invalid file format";
-			
+
 			try {
 				auto res = extractIFDFromTxt("input.png");
 
@@ -41,7 +41,7 @@ namespace extractIFDFromTxtTests
 		{
 			int N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: Could not open the file";
 
 			try {
@@ -68,7 +68,7 @@ namespace extractIFDFromTxtTests
 		{
 			int N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: File is empty";
 
 			try {
@@ -95,7 +95,7 @@ namespace extractIFDFromTxtTests
 		{
 			int N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -122,7 +122,7 @@ namespace extractIFDFromTxtTests
 		{
 			int N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -150,8 +150,8 @@ namespace extractIFDFromTxtTests
 			int N = NULL;
 			int expN = 199;
 
-			string errorText = "NULL";
-			
+			string errorText = nullptr;
+
 			try {
 				auto res = extractIFDFromTxt("input1.txt");
 
@@ -171,13 +171,13 @@ namespace extractIFDFromTxtTests
 			}
 			Assert::AreEqual(expN, N);
 		}
-		
+
 		TEST_METHOD(positiveBigIntNumber)
 		{
 			int N = NULL;
 			int expN = 89674589;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input2.txt");
@@ -204,7 +204,7 @@ namespace extractIFDFromTxtTests
 			float N = NULL;
 			float expN = 89.6;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input3.txt");
@@ -231,7 +231,7 @@ namespace extractIFDFromTxtTests
 			double N = NULL;
 			double expN = 89.674589;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input4.txt");
@@ -258,7 +258,7 @@ namespace extractIFDFromTxtTests
 			int N = NULL;
 			int expN = -896;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input5.txt");
@@ -285,7 +285,7 @@ namespace extractIFDFromTxtTests
 			int N = NULL;
 			int expN = -89674589;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input6.txt");
@@ -312,7 +312,7 @@ namespace extractIFDFromTxtTests
 			float N = NULL;
 			float expN = -89.6;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input7.txt");
@@ -339,7 +339,7 @@ namespace extractIFDFromTxtTests
 			double N = NULL;
 			double expN = -89.674589;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 
 			try {
 				auto res = extractIFDFromTxt("input8.txt");
@@ -365,7 +365,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -392,7 +392,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -419,7 +419,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -446,7 +446,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -473,7 +473,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -500,7 +500,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -527,7 +527,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -554,7 +554,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -581,7 +581,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -608,7 +608,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -635,7 +635,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -662,7 +662,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -689,7 +689,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -716,7 +716,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -743,7 +743,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -770,7 +770,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
@@ -797,7 +797,7 @@ namespace extractIFDFromTxtTests
 		{
 			double N = NULL;
 
-			string errorText = "NULL";
+			string errorText = nullptr;
 			string expErrorText = "Fail: It is impossible to determine the type of number in a string";
 
 			try {
